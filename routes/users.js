@@ -22,10 +22,10 @@ let users = [
   },
 ];
 
-// GET request: Retrieve all users
-router.get("/", (req, res) => {
-  res.send(users);
-  res.send("Yet to be implemented"); //This line is to be replaced with actual return value
+// Define a route handler for GET requests to the root path "/"
+router.get("/",(req,res)=>{
+    // Send a JSON response containing the users array, formatted with an indentation of 4 spaces for readability
+    res.send(JSON.stringify({users}, null, 4));
 });
 
 // GET by specific ID request: Retrieve a single user with email ID
